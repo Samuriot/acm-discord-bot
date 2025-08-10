@@ -3,7 +3,9 @@ from discord.ext import commands
 import logging
 from dotenv import load_dotenv
 from pdf_read import *
+from commands import *
 import os
+import requests
 
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
@@ -27,15 +29,15 @@ async def on_ready():
     
 @bot.event
 async def on_message(message):
+    author = message.author
     if message.author == bot.user:
         return
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
     if message.attachments:
         for attachment in message.attachments:
-            print(attachment)
-            os.system(f"curl -o {message.author}.pdf {attachment}")
-            await read_file(f"{message.author}.pdf")
+            await download_file(str(attachment), f"{author}.pdf")
+            await read_file(f"{author}.pdf")
         
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
