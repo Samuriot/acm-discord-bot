@@ -37,7 +37,7 @@ async def on_message(message):
     if message.attachments:
         for attachment in message.attachments:
             await download_file(str(attachment), f"{author}.pdf")
-            await read_file(f"{author}.pdf")
-        
+            resume = await read_file(f"{author}.pdf")
+            await interpret_buffer(resume)
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
