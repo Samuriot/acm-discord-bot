@@ -38,6 +38,8 @@ async def on_message(message):
         for attachment in message.attachments:
             await download_file(str(attachment), f"{author}.pdf")
             resume = await read_file(f"{author}.pdf")
-            await interpret_buffer(resume)
+            await message.channel.send('Waiting for Gemini Response...')
+            gemini_response = await interpret_buffer(resume)
+            await message.channel.send(gemini_response)
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)

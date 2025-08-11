@@ -2,7 +2,6 @@ import requests
 
 async def download_file(url, intended_filename):
     response = requests.get(url)
-    print(response.ok)
     if response.ok == False:
         print("error downloading file, exiting")
         return
