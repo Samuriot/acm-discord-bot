@@ -11,3 +11,4 @@ Hello! Here is a small project that leverages the Gemini API to assist students 
 - Integrate resume review system into thread creation (similar to ACM server)
 - Reduce the permissions on ACM Bot to handle access control
 - Integrate a database to allow Gemini to review its own previous advice
+- setup python simulated env to prevent access issues OR use Docker
