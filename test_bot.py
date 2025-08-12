@@ -19,10 +19,6 @@ intents.messages = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-def process_attachment(attachments):
-    print(attachments)
-    return
-
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user}')

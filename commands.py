@@ -7,3 +7,4 @@ async def download_file(url, intended_filename):
         return
     with open(intended_filename, mode="wb") as file:
         file.write(response.content)
+        
