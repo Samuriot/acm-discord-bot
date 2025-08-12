@@ -2,3 +2,4 @@ discord.log
 .env
 *.pdf
 *.txt
+bot-env/
