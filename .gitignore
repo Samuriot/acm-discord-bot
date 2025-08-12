@@ -3,3 +3,4 @@ discord.log
 *.pdf
 *.txt
 bot-env/
+__pycache__/
