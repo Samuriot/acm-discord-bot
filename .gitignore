@@ -1,6 +1,0 @@
-discord.log
-.env
-*.pdf
-*.txt
-bot-env/
-__pycache__/
