@@ -1,0 +1,6 @@
+discord.log
+.env
+*.pdf
+bot-env/
+__pycache__/
+.DS_Store
